@@ -11,7 +11,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
           backgroundImage: `url(${heroImage})`,
-          filter: 'brightness(0.3)'
+          filter: 'brightness(0.7)'
         }}
       />
       
@@ -49,7 +49,7 @@ const Hero = () => {
             
             <Button 
               variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105"
+              className="border-white/30 text-black hover:bg-white/10 hover:text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105"
               asChild
             >
               <a 

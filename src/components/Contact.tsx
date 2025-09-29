@@ -13,7 +13,7 @@ const Contact = () => {
     {
       icon: Phone, 
       label: "Phone",
-      value: "+91 9471366640",
+      value: "+91 94713 66640",
       href: "tel:+919471366640"
     },
     {
@@ -25,7 +25,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "India",
+      value: "Bengaluru, India",
       href: null
     }
   ];
@@ -87,16 +87,16 @@ const Contact = () => {
             
             <Button 
               variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105"
+              className="border-white/30 text-blue hover:bg-white/10 hover:text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105"
             >
+              <a href="https://drive.google.com/file/d/1IsVyFM2ajhKrznvwDC8CgKCjeFXeLFj9/view?usp=sharing">Download Resume</a>
               <Download className="mr-2 h-5 w-5" />
-              Download Resume
             </Button>
           </div>
 
           <div className="mt-16 pt-8 border-t border-white/20">
             <p className="text-gray-300">
-              © 2025 Ayush Das. Built with React and deployed with ❤️
+              © 2025 Ayush Das. All rights reserved.
             </p>
           </div>
         </div>

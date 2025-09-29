@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Building2 } from "lucide-react";
+import { Calendar, MapPin, Building2, CheckCircle2 } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -58,59 +58,82 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
-            <Card 
-              key={index}
-              className="p-8 bg-gradient-card shadow-card border-0 hover:shadow-elegant transition-all duration-300"
-            >
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                <div className="mb-4 lg:mb-0">
-                  <h3 className="text-2xl font-bold text-primary mb-2">{exp.title}</h3>
-                  <div className="flex items-center gap-2 text-lg font-medium text-foreground mb-2">
-                    <Building2 className="h-5 w-5 text-accent" />
-                    {exp.company}
-                  </div>
-                  <div className="flex flex-col sm:flex-row gap-4 text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4" />
-                      {exp.period}
+        <div className="max-w-5xl mx-auto relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/30 hidden md:block" />
+          
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative">
+                {/* Timeline dot */}
+                <div className="absolute left-8 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg hidden md:block transform -translate-x-[7px] z-10">
+                  <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75" />
+                </div>
+                
+                {/* Content card */}
+                <div className="md:ml-20">
+                  <Card className="p-8 bg-gradient-card shadow-card border-0 hover:shadow-elegant transition-all duration-300 group">
+                    {/* Header */}
+                    <div className="mb-6">
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <div>
+                          <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
+                            {exp.title}
+                          </h3>
+                          <div className="flex items-center gap-2 text-lg font-medium text-foreground mb-3">
+                            <Building2 className="h-5 w-5 text-accent" />
+                            {exp.company}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
+                          <Calendar className="h-4 w-4 text-primary" />
+                          {exp.period}
+                        </div>
+                        <div className="flex items-center gap-2 bg-accent/5 px-3 py-1.5 rounded-full">
+                          <MapPin className="h-4 w-4 text-accent" />
+                          {exp.location}
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      {exp.location}
+
+                    {/* Achievements */}
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-accent" />
+                        Key Achievements
+                      </h4>
+                      <ul className="space-y-3">
+                        {exp.highlights.map((highlight, idx) => (
+                          <li key={idx} className="flex items-start gap-3 group/item">
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0 group-hover/item:scale-150 transition-transform" />
+                            <span className="text-muted-foreground leading-relaxed">{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
+
+                    {/* Technologies */}
+                    <div>
+                      <h4 className="text-lg font-semibold mb-3">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <Badge 
+                            key={tech}
+                            className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </Card>
                 </div>
               </div>
-
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-4">Key Achievements</h4>
-                <ul className="space-y-3">
-                  {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground leading-relaxed">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <Badge 
-                      key={tech}
-                      className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </Card>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

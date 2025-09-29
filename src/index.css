@@ -8,35 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Professional tech theme */
+    --background: 220 15% 97%;
+    --foreground: 220 40% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 40% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 40% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Navy tech primary */
+    --primary: 220 85% 25%;
     --primary-foreground: 210 40% 98%;
+    --primary-hover: 220 85% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Light secondary */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 40% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 20% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Tech accent blue */
+    --accent: 210 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 85% 25%;
 
-    --radius: 0.5rem;
+    /* Tech gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 25%), hsl(210 100% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 25%) 0%, hsl(210 100% 35%) 50%, hsl(200 100% 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
+    
+    /* Elegant shadows */
+    --shadow-elegant: 0 4px 20px -2px hsl(220 85% 25% / 0.1);
+    --shadow-card: 0 2px 10px -1px hsl(220 85% 25% / 0.08);
+    --shadow-glow: 0 0 30px hsl(210 100% 45% / 0.2);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,7 +71,7 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 220 25% 6%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;

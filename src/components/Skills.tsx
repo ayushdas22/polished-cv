@@ -1,37 +1,38 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Code2, Server, Cloud, Wrench, Database, Package } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
       category: "Programming Languages",
       skills: ["Java", "Kotlin", "Python", "C/C++"],
-      icon: "💻"
+      Icon: Code2
     },
     {
       category: "Backend Technologies", 
       skills: ["Spring Boot", "Spring Data JPA", "REST APIs", "Hibernate", "Microservices"],
-      icon: "⚙️"
+      Icon: Server
     },
     {
       category: "Cloud Platforms",
       skills: ["Microsoft Azure", "AWS", "SAP BTP", "Cloud Foundry"],
-      icon: "☁️"
+      Icon: Cloud
     },
     {
       category: "DevOps & Tools",
       skills: ["Jenkins", "Docker", "Kubernetes", "CI/CD", "Git", "Postman"],
-      icon: "🚀"
+      Icon: Wrench
     },
     {
       category: "Databases",
       skills: ["MySQL", "PostgreSQL", "MongoDB", "Sybase", "HANA", "SQLite"],
-      icon: "🗄️"
+      Icon: Database
     },
     {
       category: "Others",
       skills: ["Firebase", "JWT", "SAML", "Agile", "SAP S/4 HANA"],
-      icon: "🔧"
+      Icon: Package
     }
   ];
 
@@ -52,7 +53,11 @@ const Skills = () => {
               className="p-6 bg-gradient-card shadow-card border-0 hover:shadow-elegant transition-all duration-300 hover:-translate-y-2"
             >
               <div className="text-center mb-6">
-                <div className="text-4xl mb-3">{category.icon}</div>
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <category.Icon className="h-8 w-8 text-primary" />
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-primary">
                   {category.category}
                 </h3>
